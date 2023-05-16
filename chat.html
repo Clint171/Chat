@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=, initial-scale=1.0">
+        <title>Chat</title>
+        <script type="text/javascript">
+           /* var conn = new WebSocket('ws://localhost:8080');
+            conn.onopen = function(e) {
+                console.log("Connection established!");
+            };
+
+            conn.onmessage = function(e) {
+                console.log(e.data);
+                var messages = document.getElementsByClassName('messages')[0];
+                messages.innerHTML += '<br>' + e.data;
+            };
+
+            function sendMessage() {
+                var message = document.getElementsByName('message')[0].value;
+                conn.send(message);
+            }*/
+            function writeMessage() {
+                var message = document.getElementsByName('message')[0].value;
+                var messages = document.getElementsByClassName('messages')[0];
+                messages.innerHTML += '<br>' + message;
+                document.getElementsByName('message')[0].value='';
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+        <h1>Chat</h1>
+            <textarea name="message"></textarea><br>
+            <button id="submit_btn" onclick="writeMessage()">Send</button>
+            <div class="messages">
+            </div>
+        </div>
+    </body>
+</html>
